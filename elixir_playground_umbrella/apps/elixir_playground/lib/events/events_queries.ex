@@ -21,4 +21,8 @@ defmodule ElixirPlayground.EventsQueries do
   def create(event) do
     Repo.insert!(event)
   end
+
+  def any do
+    Repo.one(from e in Events, select: count(e.id) != 0)
+  end
 end
