@@ -1,7 +1,10 @@
 defmodule ElixirPlaygroundWeb.EventController do
   use ElixirPlaygroundWeb, :controller
+  alias ElixirPlayground.EventsQueries, as: EventQueries
+  def show(conn, %{"id" => id}) do
+    event = EventQueries.get_by_id(id)
+    |> IO.inspect()
 
-  def show(conn, _params) do
-    render conn, "details.html", event: "Events #{_params["id"]}"
+    render conn, "details.html", event: event
   end
 end
