@@ -24,7 +24,7 @@ defmodule ElixirPlaygroundWeb.MixProject do
   def application do
     [
       mod: {ElixirPlaygroundWeb.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :elixir_playground]
     ]
   end
 
@@ -50,7 +50,7 @@ defmodule ElixirPlaygroundWeb.MixProject do
       {:gettext, "~> 0.18"},
       {:elixir_playground, in_umbrella: true},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
     ]
   end
 
