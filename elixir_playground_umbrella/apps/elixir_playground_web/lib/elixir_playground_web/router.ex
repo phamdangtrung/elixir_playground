@@ -18,6 +18,7 @@ defmodule ElixirPlaygroundWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/events/:id", EventController, :show
   end
 
   # Other scopes may use custom stacks.
